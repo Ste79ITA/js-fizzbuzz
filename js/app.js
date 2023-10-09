@@ -9,8 +9,15 @@ for (let i = 1; i <= 100; i++) {
   // aggiunge la classe all' elemento creato
   boxDOMElement.classList.add('box');
 
-  //per i multipli di 3 stampi “Fizz” al posto del numero
-  if (i % 3 === 0) {
+  //   Per i numeri che sono sia multipli di 3 che di 5 stampi “FizzBuzz”.
+  if (i % 3 === 0 && i % 5 === 0) {
+    // console.log('FizzBuzz');
+
+    boxDOMElement.innerHTML = 'FizzBuzz';
+    boxDOMElement.style.backgroundColor = '#f0466f';
+    gridDOMElement.append(boxDOMElement);
+    //per i multipli di 3 stampi “Fizz” al posto del numero
+  } else if (i % 3 === 0) {
     // console.log('Fizz');
 
     // assegna la stringa all' inner html
@@ -23,23 +30,13 @@ for (let i = 1; i <= 100; i++) {
     gridDOMElement.append(boxDOMElement);
   }
   //   per i multipli di 5 stampi “Buzz”.
-  if (i % 5 === 0) {
+  else if (i % 5 === 0) {
     // console.log('Buzz');
 
     boxDOMElement.innerHTML = 'Buzz';
     boxDOMElement.style.backgroundColor = '#ffd166';
     gridDOMElement.append(boxDOMElement);
-  }
-  //   Per i numeri che sono sia multipli di 3 che di 5 stampi “FizzBuzz”.
-  if (i % 3 === 0 && i % 5 === 0) {
-    // console.log('FizzBuzz');
-
-    boxDOMElement.innerHTML = 'FizzBuzz';
-    boxDOMElement.style.backgroundColor = '#f0466f';
-    gridDOMElement.append(boxDOMElement);
-  }
-
-  if (i % 3 != 0 && i % 5 != 0) {
+  } else {
     // console.log(i);
 
     boxDOMElement.classList.add('box');
